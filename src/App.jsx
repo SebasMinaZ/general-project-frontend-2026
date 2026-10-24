@@ -2,6 +2,7 @@ import { useTextos } from "./hooks/useTextos.js";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
+import PreferenciasCookies from "./components/PreferenciasCookies.jsx";
 
 function leerSeccion() {
   return window.location.hash.slice(1) || "inicio";
@@ -51,7 +52,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="sitio">
       <Navbar
         {...datos}
         idioma={idioma}
@@ -61,23 +62,28 @@ function App() {
         texto={textoGrande}
         alternarTexto={() => setTextoGrande((valor) => !valor)}
       />
-      <main className="contenedor demo-contenido"></main>
-      <p>{ingles ? "English content" : "Contenido en español"}</p>
-      <h1>{titulo ?? (ingles ? "Navigation" : "Navegación")}</h1>
-      <p role="status">
-        {consulta
-          ? `${ingles ? "Search submitted" : "Búsqueda envidada"}: ${consulta}`
-          : ingles
-            ? "Select a link"
-            : "Selecciona un enlace"}
-      </p>
-      <p>
-        {" "}
-        {ingles
-          ? "This example loads navigation abels from the API"
-          : "Este ejemplo carga los textos del menú desde la API"}
-      </p>
-    </>
+      <main className="contenedor demo-contenido">
+        <p>{ingles ? "English content" : "Contenido en español"}</p>
+        <h1>{titulo ?? (ingles ? "Navigation" : "Navegación")}</h1>
+        <p role="status">
+          {consulta
+            ? `${ingles ? "Search submitted" : "Busqueda enviada"}: ${consulta}`
+            : ingles
+              ? "Select a link"
+              : "Selecciona una enlace"}
+        </p>
+        <p>
+          {ingles
+            ? "This example loads navigation labels from the API"
+            : "Este ejemplo carga los textos del menu desde la API"}
+        </p>
+      </main>
+      <footer className="pie-pagina">
+        <div className="contenedor">
+          <PreferenciasCookies />
+        </div>
+      </footer>
+    </div>
   );
 }
 

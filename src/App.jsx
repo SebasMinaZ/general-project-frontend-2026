@@ -6,6 +6,8 @@ import PreferenciasCookies from "./components/PreferenciasCookies.jsx";
 import "./styles/index.css";
 import Campo from "./components/campo.jsx";
 
+import React from "react";
+
 const App = () => {
   return (
     <>

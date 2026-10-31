@@ -33,4 +33,6 @@ const Campo = ({ etiqueta, ayuda, error, ...atributos }) => {
   );
 };
 
+
 export default Campo;
+

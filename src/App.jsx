@@ -16,8 +16,6 @@ const App = () => {
           <h1>Taquilla</h1>
           <p>Crea tu cuenta o ingresa para comprar tus boletas</p>
         </header>
-
-        <div className="pagina-formularios"></div>
         <div className="pagina-formularios">
           <Campo
             etiqueta="Correo"

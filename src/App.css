@@ -1,7 +1,7 @@
 .pagina {
   width: min(100% - 2rem, 64rem);
   margin-inline: auto;
-  padding-block: 2rem, 3rem;
+  padding-block: 2rem 3rem;
 }
 
 .pagina-encabezado h1 {

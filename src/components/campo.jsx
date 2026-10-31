@@ -1,4 +1,5 @@
 import React, { useId } from "react";
+import "./Campo.css";
 
 const Campo = ({ etiqueta, ayuda, error, ...atributos }) => {
   const id = useId();

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
 import PreferenciasCookies from "./components/PreferenciasCookies.jsx";
 import "./styles/index.css";
+import Campo from "./components/campo.jsx";
 
 import React from "react";
 
@@ -16,10 +17,15 @@ const App = () => {
           <p>Crea tu cuenta o ingresa para comprar tus boletas</p>
         </header>
         <div className="pagina-formularios">
-          <campo
+          <Campo
             etiqueta="Correo"
             type="email"
             ayuda="Ingresa tu correo institucional"
+          />
+          <Campo
+            etiqueta="Contraseña"
+            type="password"
+            error="La contraseña es requerida"
           />
         </div>
       </main>

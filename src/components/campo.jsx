@@ -1,6 +1,7 @@
 import React, { useId } from "react";
+import "./Campo.css";
 
-const campo = () => {
+const Campo = ({ etiqueta, ayuda, error, ...atributos }) => {
   const id = useId();
   const idAyuda = `${id}-ayuda`;
   const idError = `${id}-error`;
@@ -17,9 +18,22 @@ const campo = () => {
             {ayuda}
           </p>
         )}
+        <input 
+           id= {id}
+           aria-invalid={error ? "true" : "false"}
+           aria-describedby={descripcion || undefined}
+           {...atributos}
+        />
+        {error && (
+            <p id={idError} className="campo-error">
+            {error}
+            </p>
+        )}
       </div>
     </>
   );
 };
 
-export default campo;
+
+export default Campo;
+

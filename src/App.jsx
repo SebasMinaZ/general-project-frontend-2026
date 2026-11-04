@@ -1,6 +1,5 @@
 import { useTextos } from "./hooks/useTextos.js";
 import "./App.css";
-import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
 import PreferenciasCookies from "./components/PreferenciasCookies.jsx";
 import "./styles/index.css";

@@ -1,25 +1,27 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
 import type { Sesion } from "../../model";
-import { NavLink } from 'react-router-dom';
 
-export const Navbar = ({ usuario, cerrarSesion }: Pick<Sesion, "usuario" | "cerrarSesion">) => {
+export const Navbar = ({
+  usuario,
+  cerrarSesion,
+}: Pick<Sesion, "usuario" | "cerrarSesion">) => {
   return (
     <header className="cabecera">
-      <nav aria-label="Navegacion principal">
+      <nav aria-label="Navegación principal">
         <strong>Taquilla</strong>
         <NavLink to="/">Inicio</NavLink>
         <NavLink to="/about">Acerca de</NavLink>
         {usuario ? (
-        <>
-          <span>Hola, {usuario.nombre}</span>
-          <button type="button">Cerrar sesión</button>
-        </>
-          ) : (
+          <>
+            <span>Hola, {usuario.nombre}</span>
+            <button type="button" onClick={cerrarSesion}>
+              Cerrar sesión
+            </button>
+          </>
+        ) : (
           <NavLink to="/sign-in">Iniciar sesión</NavLink>
-          )}
+        )}
       </nav>
     </header>
   );
 };
-
-export default Navbar

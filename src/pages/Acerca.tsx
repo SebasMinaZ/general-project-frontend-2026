@@ -13,3 +13,4 @@ const Acerca = () => {
     </section>
   );
 };
+export { Acerca };
